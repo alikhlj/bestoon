@@ -154,3 +154,7 @@ def grecaptcha_verify(request):
     verify_rs = requests.get(url, params=params, verify=True)
     verify_rs = verify_rs.json()
     return verify_rs.get("success", False)
+
+def index(request):
+    context={}
+    return render(request,'index.html',context)
