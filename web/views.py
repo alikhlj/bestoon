@@ -98,7 +98,7 @@ def register(request):
                 smtplib.SMTP_SSL()
                 send_mail(
                     'فعال سازی اکانت بستون',
-                    "برای فعال سازی ایمیلی تودویر خود روی لینک روبرو کلیک کنید: http://localhost:8000/accounts/register/?email={}&code={}".format(email, code),
+                    "برای فعال سازی ایمیلی تودویر خود روی لینک روبرو کلیک کنید: {}?email={}&code={}".format(request.build_absulute_url('.acounts/register/'),email, code),
                     'a.khandan75@gmail.com',
                     [email],
                     fail_silently=False,
