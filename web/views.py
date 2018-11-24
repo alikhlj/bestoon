@@ -21,7 +21,7 @@ from postmarker.core import PostmarkClient
 #Todo; validate data. user and token and amount might be fake
 def submit_expense (request):
 
-    """user submit an expense""" 
+    """user submit an expense"""
     #print("We are Here")
     #print("Im in submit_expense")
     #print(request.POST)
@@ -57,7 +57,8 @@ def submit_income(request):
 random_str = lambda N: ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(N))
 
 def register(request):
-    #if request.POST.has_key('requestcode')python2: #form is filled. if not spam, generate code and save in db, wait for email confirmation, return message
+    #if request.POST.has_key('
+    # requestcode')python2: #form is filled. if not spam, generate code and save in db, wait for email confirmation, return message
     if 'requestcode' in request.POST: #form is filled. if not spam, generate code and save in db, wait for email confirmation, return message
         #is this spam? check reCaptcha
         if not grecaptcha_verify(request): # captcha was not correct
